@@ -14,7 +14,7 @@
 
     p {
       margin-bottom: 0px;
-      margin-top: 5px;
+      /* margin-top: 8px; */
       width: 50%;
       word-wrap: break-word;
     }
@@ -22,11 +22,17 @@
     #questionsContainer {
       display: flex;
       flex-wrap: wrap;
-      width: 100%
+      width: 100%;
+      /* border: 1px solid #ddd; */
     }
 
     #questionsContainer p {
-      width: 50%;
+      width: 25%;
+      border: 1px solid #ddd;
+      /* border-bottom: none; */
+      padding: 15px 0 15px 2px;
+      box-sizing: border-box;
+      margin: 0;
     }
 
     body {
@@ -67,7 +73,7 @@
         <label for="digitInput" class="form-label">位数:</label>
         <input id="digitInput" type="number" min="1" max="2" class="form-control" value="2">
       </div>
-      <div class="col-md-3" style="display: none;">
+      <div class="col-md-3" style="display: none;width: 80px">
         <label for="mixInput" class="form-label">混合加减法:</label>
         <input id="mixInput" type="checkbox" class="form-control">
       </div>
@@ -118,7 +124,8 @@
         if ((operator === '-' && answer < 0) || answer > maxResult) {
           continue;
         }
-        var questionText = (i + 1) + '. ' + number1 + ' ' + operator + ' ' + number2 + ' = ';
+        // var questionText = (i + 1) + '. ' + number1 + ' ' + operator + ' ' + number2 + ' = ';
+        var questionText =  number1 + ' ' + operator + ' ' + number2 + ' = ';
         var question = createQuestionElement(questionText);
         var answerElement = createAnswerElement(answer);
         if (showAnswer) {
